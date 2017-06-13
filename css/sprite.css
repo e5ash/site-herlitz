@@ -1,0 +1,39 @@
+i.icon {
+  display: inline-block;
+  vertical-align: middle; }
+
+i.icon-bag {
+  background-image: url(../img/sprite.png);
+  background-position: 0px -66px;
+  width: 43px;
+  height: 46px; }
+
+i.icon-delivery {
+  background-image: url(../img/sprite.png);
+  background-position: 0px 0px;
+  width: 66px;
+  height: 66px; }
+
+i.icon-enter {
+  background-image: url(../img/sprite.png);
+  background-position: -83px -66px;
+  width: 14px;
+  height: 15px; }
+
+i.icon-enter_footer {
+  background-image: url(../img/sprite.png);
+  background-position: -68px -66px;
+  width: 15px;
+  height: 15px; }
+
+i.icon-gifts {
+  background-image: url(../img/sprite.png);
+  background-position: -66px 0px;
+  width: 66px;
+  height: 66px; }
+
+i.icon-new_star {
+  background-image: url(../img/sprite.png);
+  background-position: -43px -66px;
+  width: 25px;
+  height: 26px; }

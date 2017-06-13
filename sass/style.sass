@@ -1,0 +1,483 @@
+@import "sprite.sass"
+
+$c-black: #000
+$c-white: #fff
+$font-size: 13px
+$ff-1: 'Roboto', sans-serif
+$ff-2: 'Roboto Condensed', sans-serif
+
+
+*
+	margin: 0
+	padding: 0
+
+body
+	font: $font-size $ff-1
+	color: $c-black
+	background: $c-white
+	box-sizing: border-box
+
+html, body, header, article, aside, main, footer, div, h1, h2, h3, h4, h5, h6, button
+	display: block
+
+meta, script, style
+	display: none
+
+h1
+	font-size: 24px
+h2
+	font-size: 20px
+h3
+	font-size: 16px
+h4
+	font-size: 14px
+h5
+	font-size: 12px
+h6
+	font-size: 10px
+
+a
+	color: $c-black
+	text-decoration: none
+
+
+ul, ol
+	margin: 0
+
+
+li
+	display: inline-block
+	list-style: none
+
+
+
+.t-left
+	text-align: left
+
+.t-center
+	text-align: center
+
+.t-right
+	text-align: right
+
+.t-italic
+	font-style: italic
+
+.t-bold
+	font-weight: bold
+
+
+.b-left
+	float: left
+
+.b-right
+	float: right
+
+
+
+// Grid
+.container
+	position: relative
+	max-width: 1057px
+	margin: 0 auto
+
+.row, .clearfix
+	&:before, &:after
+		display: table
+		content: ''
+		box-sizing: border-box
+	&:after
+		clear: both
+
+.w2 > .col
+	width: 50%
+.w3 > .col
+	width: 33.333333333%
+.w4 > .col
+	width: 25%
+.w5 > .col
+	width: 20%
+.w6 > .col
+	width: 16.666666667%
+.col
+	display: block
+	float: left
+	min-height: 1px
+
+
+
+.contacts-block
+
+.contacts-block__phone
+	font-size: 23px
+	font-family: $ff-2
+	margin-top: 4px
+	margin-bottom: 5px
+
+.contacts-block__time
+	color: #919191
+
+
+.advantages
+
+
+
+.advantages__item
+	margin-right: 30px
+	font-family: $ff-2
+	font-size: 19px
+	text-transform: uppercase
+
+
+.advantages__wrap
+	margin-right: 14px
+
+
+.advantages__title
+	padding-top: 10px
+
+
+
+
+
+.cart-block
+	padding-top: 10px
+
+
+
+.cart-block__wrap
+	margin-right: 13px
+
+.cart-block__title
+	font-size: 24px
+	color: #D92A25
+
+.cart-block__counts
+	font-size: 12px
+	margin-top: 1px
+
+
+.cart-block__goods
+	color: #909090
+
+.cart-block__sum
+	font-weight: bold
+
+
+
+
+
+
+
+
+
+
+.panel
+	font-size: 12px
+	line-height: 32px
+	background: #F1F1F1
+	a
+		&:hover
+			text-decoration: underline
+
+
+
+
+.panel__lk
+	.icon
+		margin-right: 10px
+		// opacity: .3
+	a
+		display: inline-block
+		margin-right: 18px
+
+
+.panel__nav
+	float: right
+	ul
+		li
+			margin-right: 75px
+
+.header
+	padding-top: 22px
+	padding-bottom: 22px
+
+
+.header__logo
+	margin-right: 30px
+
+
+.header__contacts
+	margin-right: 35px
+
+
+.header__adventages
+	
+
+
+.header__cart
+	float: right	
+
+
+
+
+
+
+
+.navigation
+	color: white
+	font-size: 21px
+	background: #D92A25
+	font-family: $ff-2
+	text-transform: uppercase
+	text-align: left
+	padding-top: 12px
+	padding-bottom: 12px
+	ul
+		margin-right: -100px
+	li
+		margin-right: 13.2px
+		&:last-of-type
+			margin-right: 0
+	a
+		color: white
+		padding-bottom: 3px
+		&:hover
+			border-bottom: 2px solid white
+
+
+
+.banner
+	border-bottom: 2px solid #DCD466
+
+.banner__content
+	position: absolute
+	top: 135px
+	left: 0
+
+.banner__title
+	position: relative
+	color: white
+	font-size: 39px
+	background: #D92A25
+	padding-top: 18px
+	padding-left: 30px
+	padding-bottom: 18px
+	padding-right: 10px
+	text-transform: uppercase
+	font-family: $ff-2
+	&:after
+		position: absolute
+		content: ''
+		display: block
+		right: -35px
+		top: 0
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 130px 0 0 35px
+		border-color: transparent transparent transparent #d93a25
+
+.banner__country
+	display: block
+	z-index: 1
+	position: absolute
+	bottom: 20px
+	right: -35px
+	border: 2px solid white
+	border-radius: 50%
+	width: 30px
+	height: 30px
+	img
+		display: block
+
+
+.banner__desc
+	padding: 10px 30px
+	background: #DCD466
+	text-align: center
+	width: 210px
+	font-size: 15px
+	box-sizing: border-box
+
+
+.banner__img
+	display: block
+
+
+
+.main
+	padding-bottom: 30px
+
+.main-catalog
+	padding-bottom: 20px
+	border-bottom: 2px solid #DCD466
+	.row
+		&:nth-of-type(1)
+			margin-bottom: 20px
+
+.main-catalog__item
+	text-align: center
+	float: left
+	width: 176px
+	height: 225px
+	margin-top: 25px
+
+.main-catalog__text
+	height: 45px
+	margin-bottom: 10px
+
+.main-catalog__title
+	font-family: $ff-2
+	font-size: 20px
+	text-transform: uppercase
+	margin-bottom: 8px
+	a
+		border-bottom: 1px solid black
+		&:hover
+			color: #D92A25
+			border-bottom: 1px solid #D92A25
+
+
+.main-receipts
+	margin-top: 20px
+
+.main-receipts__title
+	font-family: $ff-2
+	font-size: 30px
+	text-transform: uppercase
+	i
+		position: relative
+		top: -4px
+		margin-left: 5px
+
+.main-receipts__link
+	text-align: right
+	margin-bottom: 15px
+	a
+		color: #c0b400
+		border-bottom: 1px solid #c0b400
+		&:hover
+			color: black
+			border-bottom: 1px solid black
+
+
+.product
+	float: left
+	width: 257px
+	height: 375px
+	border: 1px solid  #E4E4E4
+	margin-right: 7px
+	margin-bottom: 7px
+	&:nth-of-type(4n)
+		margin-right: 0
+
+.product__img
+	line-height: 252px
+	height: 252px
+	margin-bottom: 5px
+
+
+
+.product__content
+	padding-left: 17px
+	padding-right: 17px
+
+.product__brand
+	color: #bdbdbd
+	font-size: 18px
+	text-transform: uppercase
+	font-family: $ff-2
+	margin-bottom: 5px
+
+.product__link
+	line-height: 24px
+	margin-bottom: 10px
+	a
+		color: #a05a00
+		border-bottom: 1px solid #a05a00
+		&:hover
+			color: black
+			border-bottom: 1px solid black
+
+
+
+.main-about
+	p
+		margin-bottom: 20px
+		&:last-of-type
+			margin-bottom: 0
+
+.main-about__title
+	margin-top: 15px
+	font-size: 30px
+	font-family: $ff-2
+	margin-bottom: 20px
+
+
+.footer
+	padding-top: 18px
+	padding-bottom: 25px
+	background: #1C1C1C
+	color: white
+	a
+		color: white
+		&:hover
+			text-decoration: underline
+
+.footer__about
+	margin-right: 45px
+
+.footer__logo
+	margin-bottom: 82px
+	img
+		width: 110px
+
+.footer__copy
+	line-height: 24px
+
+.footer__catalog
+	margin-right: 30px
+	padding-right: 25px
+	.footer__nav
+		margin-right: 30px
+
+.footer__nav
+	li
+		display: block
+		margin-bottom: 14px
+
+.footer__info
+	ul
+		padding-right: 85px
+
+
+.footer__title
+	font-size: 18px
+	font-family: $ff-2
+	text-transform: uppercase
+	padding-bottom: 15px
+	margin-bottom: 15px
+	border-bottom: 1px solid white
+
+
+.footer__contacts-lk
+	float: right
+
+
+.footer__contacts
+	margin-bottom: 90px
+	.contacts-block__phone
+		font-size: 23.38px
+		a
+			text-decoration: none
+	.contacts-block__time
+		font-size: 12px
+.footer__lk
+	text-align: right
+	a
+		margin-left: 17px
+	.icon
+		margin-right: -5px
+.pt15
+	padding-top: 15px

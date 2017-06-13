@@ -1,0 +1,150 @@
+// SASS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home
+//   width: $icon-home-width
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites
+$bag-name: 'bag'
+$bag-x: 0px
+$bag-y: 66px
+$bag-offset-x: 0px
+$bag-offset-y: -66px
+$bag-width: 43px
+$bag-height: 46px
+$bag-total-width: 132px
+$bag-total-height: 112px
+$bag-image: '../img/sprite.png'
+$bag: (0px, 66px, 0px, -66px, 43px, 46px, 132px, 112px, '../img/sprite.png', 'bag', )
+$delivery-name: 'delivery'
+$delivery-x: 0px
+$delivery-y: 0px
+$delivery-offset-x: 0px
+$delivery-offset-y: 0px
+$delivery-width: 66px
+$delivery-height: 66px
+$delivery-total-width: 132px
+$delivery-total-height: 112px
+$delivery-image: '../img/sprite.png'
+$delivery: (0px, 0px, 0px, 0px, 66px, 66px, 132px, 112px, '../img/sprite.png', 'delivery', )
+$enter-name: 'enter'
+$enter-x: 83px
+$enter-y: 66px
+$enter-offset-x: -83px
+$enter-offset-y: -66px
+$enter-width: 14px
+$enter-height: 15px
+$enter-total-width: 132px
+$enter-total-height: 112px
+$enter-image: '../img/sprite.png'
+$enter: (83px, 66px, -83px, -66px, 14px, 15px, 132px, 112px, '../img/sprite.png', 'enter', )
+$enter-footer-name: 'enter_footer'
+$enter-footer-x: 68px
+$enter-footer-y: 66px
+$enter-footer-offset-x: -68px
+$enter-footer-offset-y: -66px
+$enter-footer-width: 15px
+$enter-footer-height: 15px
+$enter-footer-total-width: 132px
+$enter-footer-total-height: 112px
+$enter-footer-image: '../img/sprite.png'
+$enter-footer: (68px, 66px, -68px, -66px, 15px, 15px, 132px, 112px, '../img/sprite.png', 'enter_footer', )
+$gifts-name: 'gifts'
+$gifts-x: 66px
+$gifts-y: 0px
+$gifts-offset-x: -66px
+$gifts-offset-y: 0px
+$gifts-width: 66px
+$gifts-height: 66px
+$gifts-total-width: 132px
+$gifts-total-height: 112px
+$gifts-image: '../img/sprite.png'
+$gifts: (66px, 0px, -66px, 0px, 66px, 66px, 132px, 112px, '../img/sprite.png', 'gifts', )
+$new-star-name: 'new_star'
+$new-star-x: 43px
+$new-star-y: 66px
+$new-star-offset-x: -43px
+$new-star-offset-y: -66px
+$new-star-width: 25px
+$new-star-height: 26px
+$new-star-total-width: 132px
+$new-star-total-height: 112px
+$new-star-image: '../img/sprite.png'
+$new-star: (43px, 66px, -43px, -66px, 25px, 26px, 132px, 112px, '../img/sprite.png', 'new_star', )
+$spritesheet-width: 132px
+$spritesheet-height: 112px
+$spritesheet-image: '../img/sprite.png'
+$spritesheet-sprites: ($bag, $delivery, $enter, $enter-footer, $gifts, $new-star, )
+$spritesheet: (132px, 112px, '../img/sprite.png', $spritesheet-sprites, )
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home
+//   @include sprite-width($icon-home)
+//
+// .icon-email
+//   @include sprite($icon-email)
+//
+// Example usage in HTML:
+//   `display: block` sprite:
+//   <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//   // CSS
+//   .icon {
+//     display: inline-block;
+//   }
+//
+//   // HTML
+//   <i class="icon icon-home"></i>
+@mixin sprite-width($sprite)
+  width: nth($sprite, 5)
+
+@mixin sprite-height($sprite)
+  height: nth($sprite, 6)
+
+@mixin sprite-position($sprite)
+  $sprite-offset-x: nth($sprite, 3)
+  $sprite-offset-y: nth($sprite, 4)
+  background-position: $sprite-offset-x  $sprite-offset-y
+
+@mixin sprite-image($sprite)
+  $sprite-image: nth($sprite, 9)
+  background-image: url(#{$sprite-image})
+
+@mixin sprite($sprite)
+  @include sprite-image($sprite)
+  @include sprite-position($sprite)
+  @include sprite-width($sprite)
+  @include sprite-height($sprite)
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SASS
+//
+// @include sprites($spritesheet-sprites)
+@mixin sprites($sprites)
+  @each $sprite in $sprites
+    $sprite-name: nth($sprite, 10)
+    .#{$sprite-name}
+      @include sprite($sprite)
+
+i.icon
+  display: inline-block
+  vertical-align: middle
+
+
+i.icon-bag
+  @include sprite($bag)
+i.icon-delivery
+  @include sprite($delivery)
+i.icon-enter
+  @include sprite($enter)
+i.icon-enter_footer
+  @include sprite($enter_footer)
+i.icon-gifts
+  @include sprite($gifts)
+i.icon-new_star
+  @include sprite($new_star)
